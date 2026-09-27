@@ -1,0 +1,7 @@
+target/
+.ollama/
+reports/
+agent/work/
+__pycache__/
+.venv/
+.idea/
