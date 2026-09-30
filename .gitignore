@@ -5,3 +5,4 @@ agent/work/
 __pycache__/
 .venv/
 .idea/
+.vscode/
