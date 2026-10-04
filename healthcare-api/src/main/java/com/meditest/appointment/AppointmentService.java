@@ -1,8 +1,11 @@
 package com.meditest.appointment;
 
+import com.meditest.patient.Patient;
 import com.meditest.patient.PatientRepository;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
+import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
 
@@ -17,11 +20,14 @@ public class AppointmentService {
 
         Appointment a = new Appointment();
 
-        // BUG 3: deliberately planted defect
-        a.setPatient(
-            patients.findById(r.patientId()).get()
-        );
+        Patient patient = patients.findById(r.patientId())
+                .orElseThrow(() ->
+                        new ResponseStatusException(
+                                HttpStatus.NOT_FOUND,
+                                "Patient not found"
+                        ));
 
+        a.setPatient(patient);
         a.setStartsAt(r.startsAt());
         a.setReason(r.reason());
 

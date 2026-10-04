@@ -11,9 +11,12 @@ public class PatientService {
     private final PatientRepository repo;
 
     public Patient create(Patient p) {
+    if (p.getBloodType() != null) {
         p.setBloodType(p.getBloodType().trim().toUpperCase());
-        return repo.save(p);
     }
+    return repo.save(p);
+}
+
 
     public Optional<Patient> find(Long id) {
         return repo.findById(id);
