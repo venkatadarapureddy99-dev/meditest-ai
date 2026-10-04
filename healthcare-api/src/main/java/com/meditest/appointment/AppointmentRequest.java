@@ -1,9 +1,11 @@
 package com.meditest.appointment;
 
+import jakarta.validation.constraints.NotNull;
+
 import java.time.LocalDateTime;
 
 public record AppointmentRequest(
-        Long patientId,
-        LocalDateTime startsAt,
+        @NotNull Long patientId,
+        @NotNull LocalDateTime startsAt,
         String reason
 ) {}

@@ -1,5 +1,6 @@
 package com.meditest.appointment;
 
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -16,7 +17,7 @@ public class AppointmentController {
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     public Appointment book(
-            @RequestBody AppointmentRequest r) {
+            @Valid @RequestBody AppointmentRequest r) {
         return service.book(r);
     }
 

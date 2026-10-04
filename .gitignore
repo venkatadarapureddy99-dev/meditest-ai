@@ -1,8 +1,11 @@
-target/
-.ollama/
-reports/
-agent/work/
+# Python
 __pycache__/
+*.py[cod]
 .venv/
+
+# IDE
 .idea/
 .vscode/
+
+# MediTest-AI agent runtime
+agent/work/
