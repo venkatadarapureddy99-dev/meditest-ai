@@ -9,3 +9,11 @@ __pycache__/
 
 # MediTest-AI agent runtime
 agent/work/
+# Local tooling
+.kilo/
+
+# Maven build output
+**/target/
+
+# Generated MediTest-AI reports
+reports/
