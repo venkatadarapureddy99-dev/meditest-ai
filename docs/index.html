@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MediTest-AI Interactive Architecture</title>
+<style>
+:root{color-scheme:dark;--bg:#09090b;--panel:#111113;--card:#18181b;--border:#303037;--text:#f4f4f5;--muted:#a1a1aa;--blue:#60a5fa;--cyan:#22d3ee;--violet:#a78bfa;--amber:#fbbf24;--green:#34d399;--rose:#fb7185}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}.wrap{max-width:1100px;margin:auto;padding:48px 22px}.eyebrow{color:var(--blue);font-size:12px;font-weight:800;letter-spacing:.14em}.hero{display:grid;grid-template-columns:1.15fr .85fr;gap:28px;align-items:center;margin-bottom:32px}.hero h1{font-size:clamp(34px,6vw,64px);line-height:.98;margin:10px 0 18px}.hero p{color:var(--muted);font-size:17px;line-height:1.65}.badge{display:inline-flex;padding:8px 12px;border:1px solid var(--border);border-radius:999px;color:var(--muted);font-size:12px}.hero-art{border:1px solid var(--border);border-radius:24px;background:linear-gradient(145deg,#15151a,#0d0d10);padding:22px}.node{border:1px solid var(--border);background:var(--card);border-radius:15px;padding:13px;margin:9px 0}.node strong{display:block}.arrow{text-align:center;color:var(--muted)}.layout{display:grid;grid-template-columns:300px 1fr;gap:18px}.steps{display:grid;gap:8px}.step{width:100%;text-align:left;background:var(--panel);border:1px solid var(--border);border-radius:14px;padding:14px;color:var(--text);cursor:pointer}.step:hover{border-color:#52525b}.step.active{border-color:var(--blue);background:#101923}.step small{display:block;color:var(--muted);margin-top:4px}.panel{background:var(--panel);border:1px solid var(--border);border-radius:22px;padding:25px;min-height:390px}.kicker{font-size:12px;font-weight:800;letter-spacing:.12em;color:var(--blue)}.panel h2{margin:8px 0 12px;font-size:28px}.panel p{color:var(--muted);line-height:1.7}.terminal{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;background:#070708;border:1px solid var(--border);border-radius:14px;padding:18px;line-height:1.7;margin-top:20px;white-space:pre-wrap}.status{display:inline-block;padding:5px 9px;border-radius:7px;background:#052e24;color:var(--green);font-size:12px;font-weight:800}.controls{display:flex;gap:10px;margin-top:20px}.controls button{border:1px solid var(--border);background:var(--card);color:var(--text);padding:10px 15px;border-radius:10px;cursor:pointer}.controls button:disabled{opacity:.4;cursor:not-allowed}.quote{margin-top:26px;border-left:3px solid var(--blue);padding:12px 16px;color:#d4d4d8;background:#0d1117;border-radius:0 12px 12px 0}.footer{color:var(--muted);font-size:13px;margin-top:25px}@media(max-width:760px){.hero,.layout{grid-template-columns:1fr}.wrap{padding:28px 15px}.panel{min-height:0}}\n</style>
+</head>
+<body>
+<main class="wrap">
+<section class="hero">
+<div>
+<div class="eyebrow">MEDITEST-AI · INTERACTIVE ARCHITECTURE</div>
+<h1>AI explores.<br>Software decides.</h1>
+<p>A self-hosted quality gate for healthcare APIs. Step through the pipeline and see how an OpenAPI contract becomes AI-generated edge cases, deterministic test execution, and a CI decision.</p>
+<span class="badge">Local Qwen · Ollama · Playwright · Spring Boot · GitHub Actions</span>
+</div>
+<div class="hero-art" aria-label="Architecture preview">
+<div class="node"><strong>OpenAPI</strong><span>Machine-readable contract</span></div>
+<div class="arrow">↓</div>
+<div class="node"><strong>Qwen 2.5</strong><span>Edge-case exploration</span></div>
+<div class="arrow">↓</div>
+<div class="node"><strong>Playwright</strong><span>Controlled execution</span></div>
+<div class="arrow">↓</div>
+<div class="node"><strong>Deterministic Oracle</strong><span>BUG · GAP · PASS</span></div>
+</div>
+</section>
+
+<section class="layout">
+<nav class="steps" aria-label="Pipeline stages">
+<button class="step active" data-i="0"><b>01 · Discover</b><small>Read OpenAPI</small></button>
+<button class="step" data-i="1"><b>02 · Think</b><small>Local Qwen proposes cases</small></button>
+<button class="step" data-i="2"><b>03 · Validate</b><small>Guardrails constrain output</small></button>
+<button class="step" data-i="3"><b>04 · Execute</b><small>Playwright calls the API</small></button>
+<button class="step" data-i="4"><b>05 · Decide</b><small>Deterministic verdict</small></button>
+<button class="step" data-i="5"><b>06 · Learn</b><small>Regression candidate</small></button>
+<button class="step" data-i="6"><b>07 · Gate</b><small>CI merge decision</small></button>
+</nav>
+
+<section class="panel" aria-live="polite">
+<div class="kicker" id="kicker">01 · DISCOVER</div>
+<h2 id="title">Read the OpenAPI contract</h2>
+<p id="description">The agent first discovers what the API actually exposes. It reads the machine-readable contract instead of allowing the model to invent endpoints.</p>
+<div class="terminal" id="terminal">GET /v3/api-docs
+
+→ paths
+→ methods
+→ request structure
+→ API surface</div>
+<div id="status" class="status">GROUNDED</div>
+<div class="controls">
+<button id="prev">← Previous</button>
+<button id="next">Next →</button>
+</div>
+</section>
+</section>
+
+<div class="quote"><strong>The engineering boundary:</strong> the LLM proposes test data; a fixed Playwright harness executes it; deterministic rules decide the result.</div>
+<div class="footer">Static GitHub-compatible architecture is represented in the repository README using Mermaid. This page is an optional richer interactive demo.</div>
+</main>
+
+<script>
+const stages=[
+{n:"01 · DISCOVER",t:"Read the OpenAPI contract",d:"The agent first discovers what the API actually exposes. It reads the machine-readable contract instead of allowing the model to invent endpoints.",x:"GET /v3/api-docs\\n\\n→ paths\\n→ methods\\n→ request structure\\n→ API surface",s:"GROUNDED",c:"var(--cyan)"},
+{n:"02 · THINK",t:"Ask local Qwen for edge cases",d:"The local model proposes structured cases such as missing fields, future dates and unknown identifiers. It proposes data, not executable test code.",x:"Qwen 2.5 via Ollama\\n\\n{\\n  \"method\": \"POST\",\\n  \"path\": \"/api/patients\",\\n  \"payload\": {...}\\n}",s:"LOCAL INFERENCE",c:"var(--violet)"},
+{n:"03 · VALIDATE",t:"Apply guardrails",d:"Generated cases are checked against the known API surface and constrained expectations before they can reach the executor.",x:"Guardrails\\n\\n✓ real method\\n✓ real path\\n✓ structured payload\\n✓ expected 2xx / 4xx",s:"SAFE TO EXECUTE",c:"var(--amber)"},
+{n:"04 · EXECUTE",t:"Playwright sends the request",d:"A fixed pytest/Playwright harness performs the HTTP request. The model does not control the execution environment.",x:"POST /api/patients\\n\\nHTTP 500\\n\\nNullPointerException → server error",s:"OBSERVED RESPONSE",c:"var(--green)"},
+{n:"05 · DECIDE",t:"Deterministic oracle classifies it",d:"Explicit rules convert the observed response into a verdict. A server crash becomes BUG; an unexpected accepted invalid input can become GAP.",x:"500 → BUG\\n\\nexpected 4xx + actual 2xx → GAP\\n\\nexpected behaviour → PASS",s:"DETERMINISTIC",c:"var(--rose)"},
+{n:"06 · LEARN",t:"Promote reviewed discoveries",d:"Useful findings can become permanent regression cases. Future runs no longer depend on the model rediscovering the same failure.",x:"AI discovery\\n      ↓\\nreview\\n      ↓\\nregression_cases.json\\n      ↓\\nfuture CI runs",s:"REGRESSION",c:"var(--cyan)"},
+{n:"07 · GATE",t:"Return a CI decision",d:"The agent's exit code becomes part of the CI quality gate. This makes AI-assisted exploration actionable without making the model the authority.",x:"BUG / strict GAP\\n      ↓\\nexit code 1\\n      ↓\\nCI failure\\n      ↓\\nmerge blocked",s:"QUALITY GATE",c:"var(--violet)"}
+];
+let i=0;
+const els={k:document.getElementById("kicker"),t:document.getElementById("title"),d:document.getElementById("description"),x:document.getElementById("terminal"),s:document.getElementById("status"),prev:document.getElementById("prev"),next:document.getElementById("next")};
+const buttons=[...document.querySelectorAll(".step")];
+function render(){const z=stages[i];els.k.textContent=z.n;els.t.textContent=z.t;els.d.textContent=z.d;els.x.textContent=z.x;els.s.textContent=z.s;els.s.style.color=z.c;buttons.forEach((b,n)=>b.classList.toggle("active",n===i));els.prev.disabled=i===0;els.next.disabled=i===stages.length-1}
+buttons.forEach(b=>b.addEventListener("click",()=>{i=Number(b.dataset.i);render()}));
+els.prev.addEventListener("click",()=>{if(i>0){i--;render()}});
+els.next.addEventListener("click",()=>{if(i<stages.length-1){i++;render()}});
+render();
+</script>
+</body>
+</html>
