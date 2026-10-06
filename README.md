@@ -23,7 +23,7 @@ No patient data needs to leave the local environment and the workflow does not r
 
 ## 🎮 Interactive project walkthrough
 
-**[Open the interactive architecture demo →](docs/interactive-demo.html)**
+**[🚀 Open the Live Interactive Demo →](https://venkatadarapureddy99-dev.github.io/meditest-ai/)**
 
 The demo walks through the seven stages:
 
